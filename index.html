@@ -127,7 +127,7 @@
     .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .hero { padding: 146px 0 66px; background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%); overflow: hidden; }
+    .hero { padding: 76px 0 66px; background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%); overflow: hidden; }
     .hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; gap: 46px; align-items: center; }
     .hero-copy { max-width: 720px; }
     .hero-badge {
@@ -154,8 +154,9 @@
     .hero-card span { color: var(--muted); font-size: .92rem; }
 
     .logo-focus { padding: 58px 0 66px; background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .logo-focus.logo-first { padding-top: 146px; border-top: 0; }
     .logo-focus-box { display: grid; justify-items: center; gap: 24px; max-width: 780px; margin: 0 auto; text-align: center; }
-    .logo-focus-img { width: min(100%, 520px); height: auto; object-fit: contain; }
+    .logo-focus-img { width: min(100%, 620px); height: auto; object-fit: contain; }
     .logo-focus-text { max-width: 640px; color: var(--muted); font-size: 1.02rem; }
     .logo-focus-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 
@@ -225,6 +226,8 @@
       .nav-links.open .lang-switcher { width: fit-content; margin: 8px 0 2px 8px; }
     }
     @media (max-width: 640px) {
+      .logo-focus.logo-first { padding-top: 126px; }
+      .logo-focus-img { width: min(100%, 430px); }
       .wrap { width: min(100% - 28px, var(--container)); }
       .hero { padding-top: 106px; }
       .hero-actions, .contact-actions, .contact-actions-top { display: grid; }
@@ -306,6 +309,30 @@
   </header>
 
   <main id="top">
+
+
+
+    <!-- Logo focus -->
+    <section class="logo-focus logo-first" aria-label="PARTNER OFFICE">
+      <div class="wrap">
+        <div class="logo-focus-box reveal">
+          <img class="logo-focus-img" src="assets/logo-partner-office-cropped.jpg" alt="PARTNER OFFICE — Legalizacja, księgowość, kadry i płace" />
+          <p class="logo-focus-text" data-i18n="logoFocus.text">Biuro obsługi formalności pobytowych i firmowych w Rzeszowie. Prosto, czytelnie i z bezpośrednim kontaktem.</p>
+          <div class="logo-focus-actions">
+            <a href="#services" class="btn btn-primary" data-i18n="logoFocus.services">Usługi</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="logoFocus.contact">Kontakt</a>
+            <a href="https://www.instagram.com/partner_office_pl" target="_blank" rel="noopener" class="btn btn-instagram">
+              <svg aria-hidden="true"><use href="#i-instagram"></use></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
     <!-- Hero -->
     <section class="hero">
       <div class="wrap hero-grid">
@@ -337,28 +364,7 @@
         </div>
       </div>
     </section>
-
-
-    <!-- Logo focus -->
-    <section class="logo-focus" aria-label="PARTNER OFFICE">
-      <div class="wrap">
-        <div class="logo-focus-box reveal">
-          <img class="logo-focus-img" src="assets/logo-partner-office-cropped.jpg" alt="PARTNER OFFICE — Legalizacja, księgowość, kadry i płace" />
-          <p class="logo-focus-text" data-i18n="logoFocus.text">Biuro obsługi formalności pobytowych i firmowych w Rzeszowie. Prosto, czytelnie i z bezpośrednim kontaktem.</p>
-          <div class="logo-focus-actions">
-            <a href="#services" class="btn btn-primary" data-i18n="logoFocus.services">Usługi</a>
-            <a href="#contact" class="btn btn-outline" data-i18n="logoFocus.contact">Kontakt</a>
-            <a href="https://www.instagram.com/partner_office_pl" target="_blank" rel="noopener" class="btn btn-instagram">
-              <svg aria-hidden="true"><use href="#i-instagram"></use></svg>
-              Instagram
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Services -->
+<!-- Services -->
     <section class="section section-soft" id="services">
       <div class="wrap">
         <div class="section-head center reveal">
