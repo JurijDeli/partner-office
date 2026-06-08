@@ -111,9 +111,9 @@
       background: rgba(255,255,255,.90);
       backdrop-filter: blur(16px);
     }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-    .brand-logo { width: 146px; height: 52px; object-fit: contain; object-position: left center; }
+    .brand-logo { width: 230px; height: 76px; object-fit: contain; object-position: left center; }
     .nav-links { display: flex; align-items: center; gap: 5px; }
     .nav-link { padding: 10px 12px; border-radius: 999px; color: #38506e; font-size: .92rem; font-weight: 780; transition: background var(--transition), color var(--transition); }
     .nav-link:hover { background: var(--soft); color: var(--blue); }
@@ -127,7 +127,7 @@
     .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .hero { padding: 122px 0 70px; background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%); overflow: hidden; }
+    .hero { padding: 76px 0 66px; background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%); overflow: hidden; }
     .hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; gap: 46px; align-items: center; }
     .hero-copy { max-width: 720px; }
     .hero-badge {
@@ -152,6 +152,13 @@
     .hero-card { position: absolute; left: 22px; right: 22px; bottom: 22px; display: grid; gap: 6px; padding: 18px; border-radius: 22px; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); box-shadow: 0 14px 38px rgba(6,42,99,.17); }
     .hero-card strong { color: var(--navy); }
     .hero-card span { color: var(--muted); font-size: .92rem; }
+
+    .logo-focus { padding: 58px 0 66px; background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .logo-focus.logo-first { padding-top: 146px; border-top: 0; }
+    .logo-focus-box { display: grid; justify-items: center; gap: 24px; max-width: 780px; margin: 0 auto; text-align: center; }
+    .logo-focus-img { width: min(100%, 620px); height: auto; object-fit: contain; }
+    .logo-focus-text { max-width: 640px; color: var(--muted); font-size: 1.02rem; }
+    .logo-focus-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 
     .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .service-card { display: flex; flex-direction: column; min-height: 100%; padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: var(--white); transition: transform var(--transition), box-shadow var(--transition); }
@@ -206,15 +213,21 @@
       .hero-photo, .hero-photo img { min-height: 510px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    @media (max-width: 1040px) {
+      .brand-logo { width: 200px; height: 66px; }
+      .nav-link { padding: 10px 9px; font-size: .88rem; }
+    }
     @media (max-width: 880px) {
       .section { padding: 68px 0; }
       .nav-links, .nav-actions { display: none; }
       .menu-btn { display: block; }
-      .nav-links.open { position: fixed; inset: 84px 16px auto 16px; display: grid; gap: 4px; padding: 14px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.98); box-shadow: var(--shadow); }
+      .nav-links.open { position: fixed; inset: 100px 16px auto 16px; display: grid; gap: 4px; padding: 14px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.98); box-shadow: var(--shadow); }
       .nav-links.open .nav-link { padding: 13px 14px; }
       .nav-links.open .lang-switcher { width: fit-content; margin: 8px 0 2px 8px; }
     }
     @media (max-width: 640px) {
+      .logo-focus.logo-first { padding-top: 126px; }
+      .logo-focus-img { width: min(100%, 430px); }
       .wrap { width: min(100% - 28px, var(--container)); }
       .hero { padding-top: 106px; }
       .hero-actions, .contact-actions, .contact-actions-top { display: grid; }
@@ -223,7 +236,7 @@
       .hero-photo, .hero-photo img { min-height: 430px; }
       .photo-card img, .contact-photo img, .contact-photo { height: 420px; min-height: 420px; }
       .contact-detail { grid-template-columns: 1fr; gap: 4px; }
-      .brand-logo { width: 128px; }
+      .brand-logo { width: 176px; height: 58px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; }
@@ -270,7 +283,7 @@
   <header class="header">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="PARTNER OFFICE">
-        <img class="brand-logo" src="assets/logo-partner-office.jpg" alt="PARTNER OFFICE" />
+        <img class="brand-logo" src="assets/logo-partner-office-cropped.jpg" alt="PARTNER OFFICE" />
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Nawigacja główna">
@@ -296,6 +309,30 @@
   </header>
 
   <main id="top">
+
+
+
+    <!-- Logo focus -->
+    <section class="logo-focus logo-first" aria-label="PARTNER OFFICE">
+      <div class="wrap">
+        <div class="logo-focus-box reveal">
+          <img class="logo-focus-img" src="assets/logo-partner-office-cropped.jpg" alt="PARTNER OFFICE — Legalizacja, księgowość, kadry i płace" />
+          <p class="logo-focus-text" data-i18n="logoFocus.text">Biuro obsługi formalności pobytowych i firmowych w Rzeszowie. Prosto, czytelnie i z bezpośrednim kontaktem.</p>
+          <div class="logo-focus-actions">
+            <a href="#services" class="btn btn-primary" data-i18n="logoFocus.services">Usługi</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="logoFocus.contact">Kontakt</a>
+            <a href="https://www.instagram.com/partner_office_pl" target="_blank" rel="noopener" class="btn btn-instagram">
+              <svg aria-hidden="true"><use href="#i-instagram"></use></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
     <!-- Hero -->
     <section class="hero">
       <div class="wrap hero-grid">
@@ -327,8 +364,7 @@
         </div>
       </div>
     </section>
-
-    <!-- Services -->
+<!-- Services -->
     <section class="section section-soft" id="services">
       <div class="wrap">
         <div class="section-head center reveal">
@@ -348,7 +384,7 @@
         </div>
         <div class="about-copy reveal" style="--delay:100ms">
           <span class="eyebrow" data-i18n="about.eyebrow">O nas</span>
-          <h2 data-i18n="about.title"> Obsługa formalności, bez chaosu.</h2>
+          <h2 data-i18n="about.title">Spokojna obsługa formalności, bez zbędnego chaosu.</h2>
           <p class="lead" data-i18n="about.p1">Jesteśmy biurem w Rzeszowie, które pomaga klientom indywidualnym, cudzoziemcom i przedsiębiorcom w sprawach pobytowych, księgowych oraz kadrowo-płacowych.</p>
           <p data-i18n="about.p2">Wyjaśniamy, jakie dokumenty są potrzebne, pomagamy je uporządkować i prowadzimy klienta przez kolejne etapy. Komunikujemy się po polsku, ukraińsku i angielsku.</p>
           <div class="simple-list">
@@ -429,6 +465,7 @@
     const T = {
       pl: {
         "nav.services": "Usługi", "nav.about": "O nas", "nav.contact": "Kontakt", "nav.call": "Zadzwoń",
+        "logoFocus.text": "Biuro obsługi formalności pobytowych i firmowych w Rzeszowie. Prosto, czytelnie i z bezpośrednim kontaktem.", "logoFocus.services": "Usługi", "logoFocus.contact": "Kontakt",
         "hero.title": "Legalizacja pobytu i obsługa firmy w jednym miejscu.",
         "hero.desc": "PARTNER OFFICE wspiera cudzoziemców, przedsiębiorców i spółki w formalnościach w Polsce: od spraw pobytowych po księgowość, kadry i płace.",
         "hero.ctaServices": "Zobacz usługi", "hero.ctaContact": "Kontakt", "hero.tag1": "Legalizacja pobytu", "hero.tag2": "Księgowość", "hero.tag3": "Kadry i płace",
@@ -450,12 +487,13 @@
       },
       uk: {
         "nav.services": "Послуги", "nav.about": "Про нас", "nav.contact": "Контакти", "nav.call": "Зателефонувати",
+        "logoFocus.text": "Бюро підтримки у питаннях перебування та бізнесу в Жешуві. Просто, зрозуміло і з прямим контактом.", "logoFocus.services": "Послуги", "logoFocus.contact": "Контакт",
         "hero.title": "Легалізація перебування та обслуговування бізнесу в одному місці.",
         "hero.desc": "PARTNER OFFICE підтримує іноземців, підприємців і компанії у формальностях у Польщі: від питань перебування до бухгалтерії, кадрів і зарплати.",
         "hero.ctaServices": "Переглянути послуги", "hero.ctaContact": "Контакт", "hero.tag1": "Легалізація перебування", "hero.tag2": "Бухгалтерія", "hero.tag3": "Кадри та зарплата",
         "hero.card": "Простий контакт, зрозумілий список документів і підтримка на наступних етапах справи.",
         "services.eyebrow": "Послуги", "services.title": "З чим допомагаємо?", "services.desc": "Основні питання перебування та бізнесу зібрані у чотири прості напрями.",
-        "about.eyebrow": "Про нас", "about.title": "Формальності без зайвого хаосу.",
+        "about.eyebrow": "Про нас", "about.title": "Спокійне ведення формальностей без зайвого хаосу.",
         "about.p1": "Ми — бюро у Жешуві, яке допомагає приватним клієнтам, іноземцям і підприємцям у питаннях перебування, бухгалтерії, кадрів і зарплати.",
         "about.p2": "Пояснюємо, які документи потрібні, допомагаємо їх упорядкувати і проводимо клієнта через наступні етапи. Спілкуємося польською, українською та англійською.",
         "about.li1": "Один контактний пункт", "about.li2": "Зрозуміла інформація", "about.li3": "Підтримка приватних осіб і компаній",
@@ -471,6 +509,7 @@
       },
       en: {
         "nav.services": "Services", "nav.about": "About", "nav.contact": "Contact", "nav.call": "Call",
+        "logoFocus.text": "Office supporting residence and business formalities in Rzeszów. Simple, clear and with direct contact.", "logoFocus.services": "Services", "logoFocus.contact": "Contact",
         "hero.title": "Residence formalities and business support in one place.",
         "hero.desc": "PARTNER OFFICE supports foreigners, entrepreneurs and companies with formalities in Poland: from residence matters to accounting, HR and payroll.",
         "hero.ctaServices": "View services", "hero.ctaContact": "Contact", "hero.tag1": "Residence formalities", "hero.tag2": "Accounting", "hero.tag3": "HR & Payroll",
