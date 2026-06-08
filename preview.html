@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PARTNER OFFICE | Legalizacja pobytu · Księgowość · Kadry</title>
+  <meta name="description" content="PARTNER OFFICE Rzeszów — legalizacja pobytu, zakładanie działalności, księgowość oraz kadry i płace. Prosta obsługa formalności dla cudzoziemców, przedsiębiorców i spółek." />
+  <meta name="keywords" content="PARTNER OFFICE, Rzeszów, legalizacja pobytu, księgowość, kadry i płace, zakładanie działalności, JDG, spółka z o.o., cudzoziemcy" />
+  <meta name="author" content="PARTNER OFFICE" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PARTNER OFFICE | Legalizacja pobytu · Księgowość · Kadry" />
+  <meta property="og:description" content="Legalizacja pobytu, księgowość, kadry i płace oraz zakładanie działalności w Polsce." />
+  <meta property="og:locale" content="pl_PL" />
+
+  <style>
+    :root {
+      --blue: #2478e6;
+      --blue-dark: #075cbf;
+      --navy: #062a63;
+      --ink: #132033;
+      --muted: #61728a;
+      --line: rgba(6, 42, 99, .13);
+      --soft: #f3f8ff;
+      --soft-blue: #e9f3ff;
+      --white: #ffffff;
+      --radius: 24px;
+      --shadow: 0 18px 52px rgba(6, 42, 99, .11);
+      --container: 1120px;
+      --transition: 220ms ease;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    img, svg { display: block; max-width: 100%; }
+    ::selection { background: var(--blue); color: var(--white); }
+
+    .wrap { width: min(100% - 40px, var(--container)); margin-inline: auto; }
+    .section { padding: 82px 0; }
+    .section-soft { background: var(--soft); }
+    .section-head { max-width: 720px; margin-bottom: 34px; }
+    .center { margin-inline: auto; text-align: center; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 99px;
+      background: currentColor;
+    }
+    h1, h2, h3 { color: var(--navy); letter-spacing: -.04em; }
+    h1 { max-width: 720px; font-size: clamp(2.65rem, 5.6vw, 5.3rem); line-height: .96; margin-bottom: 22px; }
+    h2 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.03; margin-bottom: 16px; }
+    h3 { font-size: 1.22rem; line-height: 1.2; margin-bottom: 10px; }
+    p { color: var(--muted); font-size: 1rem; }
+    .lead { color: #42546b; font-size: clamp(1.06rem, 1.55vw, 1.22rem); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: transparent;
+      font-weight: 850;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 14px 34px rgba(36,120,230,.26); }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-outline { background: var(--white); color: var(--navy); border-color: var(--line); }
+    .btn-outline:hover { color: var(--blue); border-color: var(--blue); }
+    .btn-instagram { background: var(--soft-blue); color: var(--blue); border-color: rgba(36,120,230,.18); }
+    .btn-instagram:hover { background: var(--blue); color: var(--white); }
+    .btn svg { width: 18px; height: 18px; }
+    .btn:focus-visible, .nav-link:focus-visible, .lang-btn:focus-visible, .contact-toggle:focus-visible, .menu-btn:focus-visible {
+      outline: 3px solid rgba(36,120,230,.28);
+      outline-offset: 4px;
+    }
+
+    .header {
+      position: fixed;
+      z-index: 50;
+      inset: 0 0 auto 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.90);
+      backdrop-filter: blur(16px);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-logo { width: 146px; height: 52px; object-fit: contain; object-position: left center; }
+    .nav-links { display: flex; align-items: center; gap: 5px; }
+    .nav-link { padding: 10px 12px; border-radius: 999px; color: #38506e; font-size: .92rem; font-weight: 780; transition: background var(--transition), color var(--transition); }
+    .nav-link:hover { background: var(--soft); color: var(--blue); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .lang-switcher { display: flex; gap: 3px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); }
+    .lang-btn { border: 0; border-radius: 999px; padding: 6px 9px; background: transparent; color: var(--muted); font-size: .74rem; font-weight: 950; }
+    .lang-btn.active { background: var(--blue); color: var(--white); }
+    .menu-btn { display: none; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 16px; background: var(--white); color: var(--navy); }
+    .menu-btn span { display: block; width: 19px; height: 2px; margin: 5px auto; border-radius: 2px; background: currentColor; transition: transform var(--transition), opacity var(--transition); }
+    .menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .hero { padding: 122px 0 70px; background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; gap: 46px; align-items: center; }
+    .hero-copy { max-width: 720px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(36,120,230,.20);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--blue);
+      font-size: .86rem;
+      font-weight: 850;
+    }
+    .hero-badge::before { content: ""; width: 8px; height: 8px; border-radius: 99px; background: var(--blue); box-shadow: 0 0 0 5px rgba(36,120,230,.13); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .hero-tag { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--navy); font-size: .9rem; font-weight: 800; }
+    .hero-photo { position: relative; overflow: hidden; min-height: 565px; border-radius: 32px; background: var(--soft-blue); box-shadow: var(--shadow); }
+    .hero-photo img { width: 100%; height: 100%; min-height: 565px; object-fit: cover; object-position: center; }
+    .hero-card { position: absolute; left: 22px; right: 22px; bottom: 22px; display: grid; gap: 6px; padding: 18px; border-radius: 22px; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); box-shadow: 0 14px 38px rgba(6,42,99,.17); }
+    .hero-card strong { color: var(--navy); }
+    .hero-card span { color: var(--muted); font-size: .92rem; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .service-card { display: flex; flex-direction: column; min-height: 100%; padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: var(--white); transition: transform var(--transition), box-shadow var(--transition); }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .service-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 16px; background: var(--soft-blue); color: var(--blue); }
+    .service-icon svg { width: 24px; height: 24px; }
+    .service-card ul { list-style: none; display: grid; gap: 0; margin-top: 12px; }
+    .service-card li { position: relative; padding: 9px 0 9px 20px; border-top: 1px solid rgba(6,42,99,.08); color: var(--muted); font-size: .93rem; }
+    .service-card li::before { content: ""; position: absolute; top: 17px; left: 0; width: 7px; height: 7px; border-radius: 99px; background: var(--blue); }
+
+    .about-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 42px; align-items: center; }
+    .photo-card { overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: var(--soft-blue); box-shadow: var(--shadow); }
+    .photo-card img { width: 100%; height: 555px; object-fit: cover; object-position: center; }
+    .about-copy { display: grid; gap: 20px; }
+    .simple-list { display: grid; gap: 12px; margin-top: 8px; }
+    .simple-list span { display: flex; align-items: center; gap: 11px; color: var(--navy); font-weight: 850; }
+    .simple-list span::before { content: ""; width: 10px; height: 10px; border-radius: 99px; background: var(--blue); flex: 0 0 auto; }
+
+    .contact { background: var(--navy); color: var(--white); }
+    .contact h2, .contact h3 { color: var(--white); }
+    .contact p { color: rgba(255,255,255,.72); }
+    .contact .eyebrow { color: #8dc1ff; }
+    .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 34px; align-items: start; }
+    .contact-photo { overflow: hidden; min-height: 510px; border: 1px solid rgba(255,255,255,.15); border-radius: 28px; background: #0b326d; }
+    .contact-photo img { width: 100%; height: 510px; object-fit: cover; object-position: center; opacity: .93; }
+    .contact-box { padding: 26px; border: 1px solid rgba(255,255,255,.15); border-radius: 28px; background: rgba(255,255,255,.07); }
+    .contact-actions-top { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 16px; }
+    .contact-toggle { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border: 0; border-radius: 18px; background: var(--white); color: var(--navy); font-weight: 950; }
+    .contact-toggle svg { width: 18px; height: 18px; transition: transform var(--transition); }
+    .contact-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .contact-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 460ms cubic-bezier(.22,1,.36,1), margin-top 460ms cubic-bezier(.22,1,.36,1); }
+    .contact-panel.open { grid-template-rows: 1fr; margin-top: 16px; }
+    .contact-panel-inner { min-height: 0; overflow: hidden; }
+    .contact-card { padding: 22px; border-radius: 22px; background: var(--white); color: var(--ink); opacity: 0; transform: translateY(12px); transition: opacity 460ms cubic-bezier(.22,1,.36,1), transform 460ms cubic-bezier(.22,1,.36,1); }
+    .contact-panel.open .contact-card { opacity: 1; transform: translateY(0); }
+    .contact-card h3 { color: var(--navy); }
+    .contact-detail { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+    .contact-detail small { color: var(--blue); font-weight: 950; font-size: .76rem; text-transform: uppercase; }
+    .contact-detail span, .contact-detail a { color: var(--navy); font-weight: 850; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+    .footer { padding: 28px 0; background: #061f45; color: rgba(255,255,255,.72); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer strong { color: var(--white); }
+    .footer a { color: #8dc1ff; font-weight: 850; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 650ms ease, transform 650ms ease; transition-delay: var(--delay,0ms); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1040px) {
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-photo, .hero-photo img { min-height: 510px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 880px) {
+      .section { padding: 68px 0; }
+      .nav-links, .nav-actions { display: none; }
+      .menu-btn { display: block; }
+      .nav-links.open { position: fixed; inset: 84px 16px auto 16px; display: grid; gap: 4px; padding: 14px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.98); box-shadow: var(--shadow); }
+      .nav-links.open .nav-link { padding: 13px 14px; }
+      .nav-links.open .lang-switcher { width: fit-content; margin: 8px 0 2px 8px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 28px, var(--container)); }
+      .hero { padding-top: 106px; }
+      .hero-actions, .contact-actions, .contact-actions-top { display: grid; }
+      .btn { width: 100%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-photo, .hero-photo img { min-height: 430px; }
+      .photo-card img, .contact-photo img, .contact-photo { height: 420px; min-height: 420px; }
+      .contact-detail { grid-template-columns: 1fr; gap: 4px; }
+      .brand-logo { width: 128px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "PARTNER OFFICE",
+      "description": "Legalizacja pobytu, księgowość, zakładanie działalności oraz obsługa kadrowo-płacowa.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Jana Matejki 6 lok. 2",
+        "postalCode": "35-064",
+        "addressLocality": "Rzeszów",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48690982599",
+      "email": "biuro@partneroffice.com.pl",
+      "sameAs": ["https://www.instagram.com/partner_office_pl"],
+      "areaServed": "PL",
+      "taxID": "9452184109"
+    }
+  </script>
+</head>
+
+<body>
+  <!-- SVG icons -->
+  <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="i-file" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 3h6l4 4v14H7V3Zm6 0v5h5M9.5 12h5M9.5 15h5M9.5 18h3"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 21h16M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M9 7h.01M12 7h.01M15 7h.01M9 11h.01M12 11h.01M15 11h.01M9 15h.01M12 15h.01M15 15h.01"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2.5 4h5M9 11h.01M12 11h.01M15 11h.01M9 14h.01M12 14h.01M15 14h.01M9 17h.01M12 17h.01M15 17h.01"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20m8-12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm8 12v-1.2a3 3 0 0 0-2.3-2.9m-1.9-10.7a3.5 3.5 0 0 1 0 6.6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 4 5 6c-.7.7-.7 1.8 0 2.5l2.2 2.2a15.8 15.8 0 0 0 6.1 6.1l2.2 2.2c.7.7 1.8.7 2.5 0l2-2c.4-.4.5-1 .3-1.5l-1.4-3.1c-.2-.5-.8-.8-1.3-.7l-2.5.5a11.4 11.4 0 0 1-5.3-5.3l.5-2.5c.1-.5-.2-1.1-.7-1.3L8.5 3.7C8 3.5 7.4 3.6 7 4Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16v12H4V6Zm0 1 8 6 8-6"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 13.2A4.2 4.2 0 1 0 12 7.8a4.2 4.2 0 0 0 0 8.4ZM17.5 6.5h.01"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+  </svg>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="PARTNER OFFICE">
+        <img class="brand-logo" src="assets/logo-partner-office.jpg" alt="PARTNER OFFICE" />
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Nawigacja główna">
+        <a href="#services" class="nav-link" data-i18n="nav.services">Usługi</a>
+        <a href="#about" class="nav-link" data-i18n="nav.about">O nas</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Kontakt</a>
+        <a href="https://www.instagram.com/partner_office_pl" target="_blank" rel="noopener" class="nav-link">Instagram</a>
+        <div class="lang-switcher" role="group" aria-label="Zmień język">
+          <button class="lang-btn active" type="button" data-lang="pl">PL</button>
+          <button class="lang-btn" type="button" data-lang="uk">UA</button>
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+48690982599" class="btn btn-primary" data-i18n="nav.call">Zadzwoń</a>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <div class="hero-badge">Rzeszów · Polska</div>
+          <h1 data-i18n="hero.title">Legalizacja pobytu i obsługa firmy w jednym miejscu.</h1>
+          <p class="lead" data-i18n="hero.desc">PARTNER OFFICE wspiera cudzoziemców, przedsiębiorców i spółki w formalnościach w Polsce: od spraw pobytowych po księgowość, kadry i płace.</p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary" data-i18n="hero.ctaServices">Zobacz usługi</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="hero.ctaContact">Kontakt</a>
+            <a href="https://www.instagram.com/partner_office_pl" target="_blank" rel="noopener" class="btn btn-instagram">
+              <svg aria-hidden="true"><use href="#i-instagram"></use></svg>
+              Instagram
+            </a>
+          </div>
+          <div class="hero-tags" aria-label="Zakres obsługi">
+            <span class="hero-tag" data-i18n="hero.tag1">Legalizacja pobytu</span>
+            <span class="hero-tag" data-i18n="hero.tag2">Księgowość</span>
+            <span class="hero-tag" data-i18n="hero.tag3">Kadry i płace</span>
+          </div>
+        </div>
+
+        <div class="hero-photo reveal" style="--delay:120ms">
+          <img src="assets/hero-team.jpg" alt="Zespół PARTNER OFFICE podczas pracy z dokumentami" />
+          <div class="hero-card">
+            <strong>PARTNER OFFICE</strong>
+            <span data-i18n="hero.card">Prosty kontakt, jasna lista dokumentów i wsparcie na kolejnych etapach sprawy.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-soft" id="services">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="services.eyebrow">Usługi</span>
+          <h2 data-i18n="services.title">W czym pomagamy?</h2>
+          <p data-i18n="services.desc">Najważniejsze sprawy pobytowe i firmowe zebrane w czterech prostych obszarach.</p>
+        </div>
+        <div class="services-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div class="photo-card reveal">
+          <img src="assets/about-owner.jpg" alt="Przedstawicielka PARTNER OFFICE przy biurku i laptopie" />
+        </div>
+        <div class="about-copy reveal" style="--delay:100ms">
+          <span class="eyebrow" data-i18n="about.eyebrow">O nas</span>
+          <h2 data-i18n="about.title">Spokojna obsługa formalności, bez zbędnego chaosu.</h2>
+          <p class="lead" data-i18n="about.p1">Jesteśmy biurem w Rzeszowie, które pomaga klientom indywidualnym, cudzoziemcom i przedsiębiorcom w sprawach pobytowych, księgowych oraz kadrowo-płacowych.</p>
+          <p data-i18n="about.p2">Wyjaśniamy, jakie dokumenty są potrzebne, pomagamy je uporządkować i prowadzimy klienta przez kolejne etapy. Komunikujemy się po polsku, ukraińsku i angielsku.</p>
+          <div class="simple-list">
+            <span data-i18n="about.li1">Jeden punkt kontaktu</span>
+            <span data-i18n="about.li2">Przejrzyste informacje</span>
+            <span data-i18n="about.li3">Wsparcie dla osób prywatnych i firm</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-photo reveal">
+          <img src="assets/contact-business-card.jpg" alt="Wizytówka PARTNER OFFICE i laptop" />
+        </div>
+        <div class="contact-box reveal" style="--delay:100ms">
+          <span class="eyebrow" data-i18n="contact.eyebrow">Kontakt</span>
+          <h2 data-i18n="contact.title">Napisz lub zadzwoń.</h2>
+          <p data-i18n="contact.desc">Skontaktuj się, aby krótko opisać sprawę i ustalić następny krok.</p>
+
+          <div class="contact-actions-top">
+            <a href="tel:+48690982599" class="btn btn-primary" data-i18n="contact.callBtnTop">Zadzwoń</a>
+            <a href="mailto:biuro@partneroffice.com.pl" class="btn btn-outline" data-i18n="contact.mailBtnTop">Napisz e-mail</a>
+            <a href="https://www.instagram.com/partner_office_pl" target="_blank" rel="noopener" class="btn btn-instagram">
+              <svg aria-hidden="true"><use href="#i-instagram"></use></svg>
+              Instagram
+            </a>
+          </div>
+
+          <button class="contact-toggle" id="contactToggle" type="button" aria-expanded="false" aria-controls="contactPanel">
+            <span id="contactToggleText" data-i18n="contact.show">Pokaż pełne dane kontaktowe</span>
+            <svg aria-hidden="true"><use href="#i-chevron"></use></svg>
+          </button>
+          <div class="contact-panel" id="contactPanel" aria-hidden="true">
+            <div class="contact-panel-inner">
+              <div class="contact-card">
+                <h3>PARTNER OFFICE</h3>
+                <div class="contact-detail">
+                  <small data-i18n="contact.addressLabel">Adres</small>
+                  <span>ul. Jana Matejki 6 lok. 2<br>35-064 Rzeszów</span>
+                </div>
+                <div class="contact-detail">
+                  <small data-i18n="contact.phoneLabel">Telefon</small>
+                  <a href="tel:+48690982599">+48 690 982 599</a>
+                </div>
+                <div class="contact-detail">
+                  <small data-i18n="contact.emailLabel">E-mail</small>
+                  <a href="mailto:biuro@partneroffice.com.pl">biuro@partneroffice.com.pl</a>
+                </div>
+                <div class="contact-detail">
+                  <small data-i18n="contact.regLabel">Dane</small>
+                  <span>NIP: 9452184109<br>REGON: 522053363</span>
+                </div>
+                <div class="contact-actions">
+                  <a href="tel:+48690982599" class="btn btn-primary" data-i18n="contact.callBtn">Zadzwoń</a>
+                  <a href="mailto:biuro@partneroffice.com.pl" class="btn btn-outline" data-i18n="contact.mailBtn">Napisz e-mail</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <strong>PARTNER OFFICE</strong>
+      <span id="footerSub">Legalizacja pobytu · Księgowość · Kadry i płace</span>
+      <a href="https://www.instagram.com/partner_office_pl" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    const T = {
+      pl: {
+        "nav.services": "Usługi", "nav.about": "O nas", "nav.contact": "Kontakt", "nav.call": "Zadzwoń",
+        "hero.title": "Legalizacja pobytu i obsługa firmy w jednym miejscu.",
+        "hero.desc": "PARTNER OFFICE wspiera cudzoziemców, przedsiębiorców i spółki w formalnościach w Polsce: od spraw pobytowych po księgowość, kadry i płace.",
+        "hero.ctaServices": "Zobacz usługi", "hero.ctaContact": "Kontakt", "hero.tag1": "Legalizacja pobytu", "hero.tag2": "Księgowość", "hero.tag3": "Kadry i płace",
+        "hero.card": "Prosty kontakt, jasna lista dokumentów i wsparcie na kolejnych etapach sprawy.",
+        "services.eyebrow": "Usługi", "services.title": "W czym pomagamy?", "services.desc": "Najważniejsze sprawy pobytowe i firmowe zebrane w czterech prostych obszarach.",
+        "about.eyebrow": "O nas", "about.title": "Spokojna obsługa formalności, bez zbędnego chaosu.",
+        "about.p1": "Jesteśmy biurem w Rzeszowie, które pomaga klientom indywidualnym, cudzoziemcom i przedsiębiorcom w sprawach pobytowych, księgowych oraz kadrowo-płacowych.",
+        "about.p2": "Wyjaśniamy, jakie dokumenty są potrzebne, pomagamy je uporządkować i prowadzimy klienta przez kolejne etapy. Komunikujemy się po polsku, ukraińsku i angielsku.",
+        "about.li1": "Jeden punkt kontaktu", "about.li2": "Przejrzyste informacje", "about.li3": "Wsparcie dla osób prywatnych i firm",
+        "contact.eyebrow": "Kontakt", "contact.title": "Napisz lub zadzwoń.", "contact.desc": "Skontaktuj się, aby krótko opisać sprawę i ustalić następny krok.",
+        "contact.callBtnTop": "Zadzwoń", "contact.mailBtnTop": "Napisz e-mail", "contact.show": "Pokaż pełne dane kontaktowe", "contact.hide": "Ukryj dane kontaktowe", "contact.addressLabel": "Adres", "contact.phoneLabel": "Telefon", "contact.emailLabel": "E-mail", "contact.regLabel": "Dane", "contact.callBtn": "Zadzwoń", "contact.mailBtn": "Napisz e-mail",
+        "footerSub": "Legalizacja pobytu · Księgowość · Kadry i płace",
+        services: [
+          { icon: "i-file", title: "Legalizacja pobytu", list: ["Sprawy pobytowe i administracyjne", "Karty pobytu i rezydent UE", "Obywatelstwo oraz akty stanu cywilnego"] },
+          { icon: "i-building", title: "Zakładanie działalności", list: ["Jednoosobowa działalność gospodarcza", "Spółka z o.o.", "Podstawowe formalności rejestracyjne"] },
+          { icon: "i-calc", title: "Księgowość", list: ["Obsługa JDG i spółek", "Deklaracje i rozliczenia", "Bieżąca komunikacja z klientem"] },
+          { icon: "i-users", title: "Kadry i płace", list: ["Umowy i dokumenty pracownicze", "Naliczanie wynagrodzeń", "Obsługa ZUS"] }
+        ]
+      },
+      uk: {
+        "nav.services": "Послуги", "nav.about": "Про нас", "nav.contact": "Контакти", "nav.call": "Зателефонувати",
+        "hero.title": "Легалізація перебування та обслуговування бізнесу в одному місці.",
+        "hero.desc": "PARTNER OFFICE підтримує іноземців, підприємців і компанії у формальностях у Польщі: від питань перебування до бухгалтерії, кадрів і зарплати.",
+        "hero.ctaServices": "Переглянути послуги", "hero.ctaContact": "Контакт", "hero.tag1": "Легалізація перебування", "hero.tag2": "Бухгалтерія", "hero.tag3": "Кадри та зарплата",
+        "hero.card": "Простий контакт, зрозумілий список документів і підтримка на наступних етапах справи.",
+        "services.eyebrow": "Послуги", "services.title": "З чим допомагаємо?", "services.desc": "Основні питання перебування та бізнесу зібрані у чотири прості напрями.",
+        "about.eyebrow": "Про нас", "about.title": "Спокійне ведення формальностей без зайвого хаосу.",
+        "about.p1": "Ми — бюро у Жешуві, яке допомагає приватним клієнтам, іноземцям і підприємцям у питаннях перебування, бухгалтерії, кадрів і зарплати.",
+        "about.p2": "Пояснюємо, які документи потрібні, допомагаємо їх упорядкувати і проводимо клієнта через наступні етапи. Спілкуємося польською, українською та англійською.",
+        "about.li1": "Один контактний пункт", "about.li2": "Зрозуміла інформація", "about.li3": "Підтримка приватних осіб і компаній",
+        "contact.eyebrow": "Контакти", "contact.title": "Напишіть або зателефонуйте.", "contact.desc": "Зв'яжіться з нами, щоб коротко описати справу і визначити наступний крок.",
+        "contact.callBtnTop": "Зателефонувати", "contact.mailBtnTop": "Написати e-mail", "contact.show": "Показати повні контактні дані", "contact.hide": "Сховати контактні дані", "contact.addressLabel": "Адреса", "contact.phoneLabel": "Телефон", "contact.emailLabel": "E-mail", "contact.regLabel": "Дані", "contact.callBtn": "Зателефонувати", "contact.mailBtn": "Написати e-mail",
+        "footerSub": "Легалізація перебування · Бухгалтерія · Кадри та зарплата",
+        services: [
+          { icon: "i-file", title: "Легалізація перебування", list: ["Питання перебування та адміністративні справи", "Карти побиту і резидент ЄС", "Громадянство та акти цивільного стану"] },
+          { icon: "i-building", title: "Реєстрація бізнесу", list: ["JDG — одноосібна діяльність", "Sp. z o.o.", "Основні реєстраційні формальності"] },
+          { icon: "i-calc", title: "Бухгалтерія", list: ["Обслуговування JDG і компаній", "Декларації та розрахунки", "Поточна комунікація з клієнтом"] },
+          { icon: "i-users", title: "Кадри та зарплата", list: ["Договори та кадрові документи", "Розрахунок зарплати", "Обслуговування ZUS"] }
+        ]
+      },
+      en: {
+        "nav.services": "Services", "nav.about": "About", "nav.contact": "Contact", "nav.call": "Call",
+        "hero.title": "Residence formalities and business support in one place.",
+        "hero.desc": "PARTNER OFFICE supports foreigners, entrepreneurs and companies with formalities in Poland: from residence matters to accounting, HR and payroll.",
+        "hero.ctaServices": "View services", "hero.ctaContact": "Contact", "hero.tag1": "Residence formalities", "hero.tag2": "Accounting", "hero.tag3": "HR & Payroll",
+        "hero.card": "Simple contact, a clear document list and support through the next stages of the case.",
+        "services.eyebrow": "Services", "services.title": "How can we help?", "services.desc": "Key residence and business matters organised into four simple areas.",
+        "about.eyebrow": "About", "about.title": "Calm handling of formalities, without unnecessary chaos.",
+        "about.p1": "We are an office in Rzeszów supporting individual clients, foreigners and entrepreneurs with residence matters, accounting, HR and payroll.",
+        "about.p2": "We explain what documents are needed, help organise them and guide the client through the next steps. We communicate in Polish, Ukrainian and English.",
+        "about.li1": "One point of contact", "about.li2": "Clear information", "about.li3": "Support for individuals and companies",
+        "contact.eyebrow": "Contact", "contact.title": "Write or call.", "contact.desc": "Contact us to briefly describe your case and agree on the next step.",
+        "contact.callBtnTop": "Call", "contact.mailBtnTop": "Send e-mail", "contact.show": "Show full contact details", "contact.hide": "Hide contact details", "contact.addressLabel": "Address", "contact.phoneLabel": "Phone", "contact.emailLabel": "E-mail", "contact.regLabel": "Details", "contact.callBtn": "Call", "contact.mailBtn": "Send e-mail",
+        "footerSub": "Residence formalities · Accounting · HR & Payroll",
+        services: [
+          { icon: "i-file", title: "Residence formalities", list: ["Residence and administrative matters", "Residence permits and EU resident status", "Citizenship and civil status documents"] },
+          { icon: "i-building", title: "Business registration", list: ["Sole trader / JDG", "Limited liability company / Sp. z o.o.", "Basic registration formalities"] },
+          { icon: "i-calc", title: "Accounting", list: ["Support for JDG and companies", "Declarations and filings", "Ongoing client communication"] },
+          { icon: "i-users", title: "HR & Payroll", list: ["Contracts and employee documents", "Payroll calculation", "ZUS administration"] }
+        ]
+      }
+    };
+
+    let lang = "pl";
+    function tr(key) { return T[lang][key] || key; }
+    function icon(id) { return '<svg aria-hidden="true"><use href="#' + id + '"></use></svg>'; }
+
+    function applyTranslations() {
+      document.documentElement.lang = lang === "uk" ? "uk" : lang;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const value = tr(el.dataset.i18n);
+        if (typeof value === "string") el.textContent = value;
+      });
+      const footerSub = document.getElementById("footerSub");
+      if (footerSub) footerSub.textContent = tr("footerSub");
+      const toggle = document.getElementById("contactToggle");
+      const toggleText = document.getElementById("contactToggleText");
+      if (toggle && toggleText) {
+        toggleText.textContent = toggle.getAttribute("aria-expanded") === "true" ? tr("contact.hide") : tr("contact.show");
+      }
+    }
+
+    function renderServices() {
+      const grid = document.getElementById("servicesGrid");
+      grid.innerHTML = T[lang].services.map((s, i) => `
+        <article class="service-card reveal" style="--delay:${i * 70}ms">
+          <div class="service-icon">${icon(s.icon)}</div>
+          <h3>${s.title}</h3>
+          <ul>${s.list.map(item => `<li>${item}</li>`).join("")}</ul>
+        </article>
+      `).join("");
+    }
+
+    function setupNav() {
+      const btn = document.getElementById("menuBtn");
+      const links = document.getElementById("navLinks");
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!open));
+        links.classList.toggle("open", !open);
+        document.body.classList.toggle("menu-open", !open);
+      });
+      links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+        btn.setAttribute("aria-expanded", "false");
+        links.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }));
+      document.querySelectorAll(".lang-btn").forEach(b => b.addEventListener("click", () => {
+        lang = b.dataset.lang;
+        document.querySelectorAll(".lang-btn").forEach(x => x.classList.toggle("active", x.dataset.lang === lang));
+        renderAll();
+      }));
+    }
+
+    function setupContact() {
+      const toggle = document.getElementById("contactToggle");
+      const panel = document.getElementById("contactPanel");
+      const text = document.getElementById("contactToggleText");
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        panel.classList.toggle("open", !open);
+        panel.setAttribute("aria-hidden", String(open));
+        text.textContent = !open ? tr("contact.hide") : tr("contact.show");
+      });
+    }
+
+    let observer = null;
+    function setupReveal() {
+      const items = document.querySelectorAll(".reveal:not(.visible)");
+      if (!("IntersectionObserver" in window)) { items.forEach(el => el.classList.add("visible")); return; }
+      if (observer) observer.disconnect();
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12, rootMargin: "0px 0px -20px 0px" });
+      items.forEach(el => observer.observe(el));
+    }
+
+    function renderAll() {
+      applyTranslations();
+      renderServices();
+      setupReveal();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderAll();
+      setupNav();
+      setupContact();
+    });
+  </script>
+</body>
+</html>
