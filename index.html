@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PARTNER OFFICE | Legalizacja pobytu · Księgowość · Kadry</title>
-  <meta name="description" content="PARTNER OFFICE Rzeszów — legalizacja pobytu, zakładanie działalności, księgowość oraz kadry i płace. Pomagamy uporządkować dokumenty i przejść przez formalności krok po kroku." />
+  <meta name="description" content="PARTNER OFFICE Rzeszów — legalizacja pobytu, zakładanie działalności, księgowość oraz kadry i płace. Prosta obsługa formalności dla cudzoziemców, przedsiębiorców i spółek." />
   <meta name="keywords" content="PARTNER OFFICE, Rzeszów, legalizacja pobytu, księgowość, kadry i płace, zakładanie działalności, JDG, spółka z o.o., cudzoziemcy" />
   <meta name="author" content="PARTNER OFFICE" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#ffffff" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="PARTNER OFFICE | Legalizacja pobytu · Księgowość · Kadry" />
-  <meta property="og:description" content="Legalizacja pobytu, zakładanie działalności, księgowość oraz kadry i płace w Rzeszowie." />
+  <meta property="og:description" content="Legalizacja pobytu, księgowość, kadry i płace oraz zakładanie działalności w Polsce." />
   <meta property="og:locale" content="pl_PL" />
 
   <style>
@@ -71,7 +71,7 @@
       background: currentColor;
     }
     h1, h2, h3 { color: var(--navy); letter-spacing: -.04em; }
-    h1 { max-width: 720px; font-size: clamp(2.55rem, 5vw, 4.85rem); line-height: 1.08; margin-bottom: 22px; text-wrap: balance; }
+    h1 { max-width: 720px; font-size: clamp(2.65rem, 5.6vw, 5.3rem); line-height: .96; margin-bottom: 22px; }
     h2 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.03; margin-bottom: 16px; }
     h3 { font-size: 1.22rem; line-height: 1.2; margin-bottom: 10px; }
     p { color: var(--muted); font-size: 1rem; }
@@ -146,7 +146,7 @@
     .hero-badge::before { content: ""; width: 8px; height: 8px; border-radius: 99px; background: var(--blue); box-shadow: 0 0 0 5px rgba(36,120,230,.13); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
     .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .hero-tag { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--navy); font-size: .9rem; font-weight: 800; line-height: 1.15; white-space: nowrap; }
+    .hero-tag { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--navy); font-size: .9rem; font-weight: 800; }
     .hero-photo { position: relative; overflow: hidden; min-height: 565px; border-radius: 32px; background: var(--soft-blue); box-shadow: var(--shadow); }
     .hero-photo img { width: 100%; height: 100%; min-height: 565px; object-fit: cover; object-position: center; }
     .hero-card { position: absolute; left: 22px; right: 22px; bottom: 22px; display: grid; gap: 6px; padding: 18px; border-radius: 22px; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); box-shadow: 0 14px 38px rgba(6,42,99,.17); }
@@ -160,52 +160,11 @@
     .logo-focus-text { max-width: 640px; color: var(--muted); font-size: 1.02rem; }
     .logo-focus-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 
-    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .service-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      padding: 0 18px 22px;   /* no top padding — image goes right to edge */
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      background: var(--white);
-      overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: rgba(36,120,230,.20); }
-
-    /* image area: no background, no box, no border — image floats freely */
-    .service-visual {
-      display: block;
-      width: calc(100% + 36px);   /* bleed past card padding */
-      margin: 0 -18px 18px;
-      padding: 0;
-      background: transparent;
-      box-shadow: none;
-      border: none;
-      border-radius: 0;
-      overflow: hidden;
-      line-height: 0;
-      text-align: center;
-    }
-    .service-visual img {
-      display: block;
-      width: 100%;
-      height: 170px;
-      object-fit: contain;
-      object-position: center bottom;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      transition: transform var(--transition);
-    }
-    .service-card:hover .service-visual img { transform: translateY(-4px) scale(1.04); }
-
-    /* if image fails to load, show nothing — no fallback box */
-    .service-visual.image-missing { display: none; }
-
-    .service-icon { display: none; }
-    .service-card h3 { margin-bottom: 10px; padding-top: 2px; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .service-card { display: flex; flex-direction: column; min-height: 100%; padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: var(--white); transition: transform var(--transition), box-shadow var(--transition); }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .service-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 16px; background: var(--soft-blue); color: var(--blue); }
+    .service-icon svg { width: 24px; height: 24px; }
     .service-card ul { list-style: none; display: grid; gap: 0; margin-top: 12px; }
     .service-card li { position: relative; padding: 9px 0 9px 20px; border-top: 1px solid rgba(6,42,99,.08); color: var(--muted); font-size: .93rem; }
     .service-card li::before { content: ""; position: absolute; top: 17px; left: 0; width: 7px; height: 7px; border-radius: 99px; background: var(--blue); }
@@ -271,23 +230,13 @@
       .logo-focus-img { width: min(100%, 430px); }
       .wrap { width: min(100% - 28px, var(--container)); }
       .hero { padding-top: 106px; }
-      h1 { font-size: clamp(2.35rem, 10.5vw, 3.35rem); line-height: 1.1; }
       .hero-actions, .contact-actions, .contact-actions-top { display: grid; }
       .btn { width: 100%; }
-      .hero-tags { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
-      .hero-tag { width: 100%; padding: 8px 5px; text-align: center; font-size: clamp(.58rem, 2.6vw, .76rem); letter-spacing: -.02em; overflow: hidden; text-overflow: ellipsis; }
       .services-grid { grid-template-columns: 1fr; }
-      .service-card { padding: 0 18px 18px; }
-      .service-visual { width: calc(100% + 36px); margin: 0 -18px 14px; }
-      .service-visual img { height: 148px; }
       .hero-photo, .hero-photo img { min-height: 430px; }
       .photo-card img, .contact-photo img, .contact-photo { height: 420px; min-height: 420px; }
       .contact-detail { grid-template-columns: 1fr; gap: 4px; }
       .brand-logo { width: 176px; height: 58px; }
-    }
-    @media (max-width: 370px) {
-      .hero-tags { grid-template-columns: 1fr; }
-      .hero-tag { font-size: .82rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; }
@@ -327,6 +276,7 @@
     <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 4 5 6c-.7.7-.7 1.8 0 2.5l2.2 2.2a15.8 15.8 0 0 0 6.1 6.1l2.2 2.2c.7.7 1.8.7 2.5 0l2-2c.4-.4.5-1 .3-1.5l-1.4-3.1c-.2-.5-.8-.8-1.3-.7l-2.5.5a11.4 11.4 0 0 1-5.3-5.3l.5-2.5c.1-.5-.2-1.1-.7-1.3L8.5 3.7C8 3.5 7.4 3.6 7 4Z"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16v12H4V6Zm0 1 8 6 8-6"/></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 13.2A4.2 4.2 0 1 0 12 7.8a4.2 4.2 0 0 0 0 8.4ZM17.5 6.5h.01"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5Z"/></symbol>
     <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
   </svg>
 
@@ -368,7 +318,7 @@
       <div class="wrap">
         <div class="logo-focus-box reveal">
           <img class="logo-focus-img" src="assets/logo-partner-office-cropped.jpg" alt="PARTNER OFFICE — Legalizacja, księgowość, kadry i płace" />
-          <p class="logo-focus-text" data-i18n="logoFocus.text">Jesteśmy w Rzeszowie. Pomagamy w sprawach pobytowych, rejestracji działalności, księgowości oraz kadrach i płacach — jasno, konkretnie i po ludzku.</p>
+          <p class="logo-focus-text" data-i18n="logoFocus.text">Biuro obsługi formalności pobytowych i firmowych w Rzeszowie. Prosto, czytelnie i z bezpośrednim kontaktem.</p>
           <div class="logo-focus-actions">
             <a href="#services" class="btn btn-primary" data-i18n="logoFocus.services">Usługi</a>
             <a href="#contact" class="btn btn-outline" data-i18n="logoFocus.contact">Kontakt</a>
@@ -389,8 +339,8 @@
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
           <div class="hero-badge">Rzeszów · Polska</div>
-          <h1 data-i18n="hero.title">Pobyt, firma i księgowość — w jednym miejscu.</h1>
-          <p class="lead" data-i18n="hero.desc">Powiedz, czego dotyczy sprawa. Podpowiemy, jakie dokumenty przygotować, uporządkujemy formalności i przeprowadzimy Cię przez kolejne kroki.</p>
+          <h1 data-i18n="hero.title">Legalizacja pobytu i obsługa firmy w jednym miejscu.</h1>
+          <p class="lead" data-i18n="hero.desc">PARTNER OFFICE wspiera cudzoziemców, przedsiębiorców i spółki w formalnościach w Polsce: od spraw pobytowych po księgowość, kadry i płace.</p>
           <div class="hero-actions">
             <a href="#services" class="btn btn-primary" data-i18n="hero.ctaServices">Zobacz usługi</a>
             <a href="#contact" class="btn btn-outline" data-i18n="hero.ctaContact">Kontakt</a>
@@ -400,7 +350,7 @@
             </a>
           </div>
           <div class="hero-tags" aria-label="Zakres obsługi">
-            <span class="hero-tag" data-i18n="hero.tag1">Pobyt w Polsce</span>
+            <span class="hero-tag" data-i18n="hero.tag1">Legalizacja pobytu</span>
             <span class="hero-tag" data-i18n="hero.tag2">Księgowość</span>
             <span class="hero-tag" data-i18n="hero.tag3">Kadry i płace</span>
           </div>
@@ -410,7 +360,7 @@
           <img src="assets/hero-team.jpg" alt="Zespół PARTNER OFFICE podczas pracy z dokumentami" />
           <div class="hero-card">
             <strong>PARTNER OFFICE</strong>
-            <span data-i18n="hero.card">Najpierw krótko ustalamy temat, potem przygotowujemy listę dokumentów i plan działania.</span>
+            <span data-i18n="hero.card">Prosty kontakt, jasna lista dokumentów i wsparcie na kolejnych etapach sprawy.</span>
           </div>
         </div>
       </div>
@@ -421,7 +371,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow" data-i18n="services.eyebrow">Usługi</span>
           <h2 data-i18n="services.title">W czym pomagamy?</h2>
-          <p data-i18n="services.desc">Najczęściej wybierane usługi zebraliśmy w czterech obszarach, żeby łatwiej znaleźć właściwą sprawę.</p>
+          <p data-i18n="services.desc">Najważniejsze sprawy pobytowe i firmowe zebrane w czterech prostych obszarach.</p>
         </div>
         <div class="services-grid" id="servicesGrid"></div>
       </div>
@@ -435,12 +385,12 @@
         </div>
         <div class="about-copy reveal" style="--delay:100ms">
           <span class="eyebrow" data-i18n="about.eyebrow">O nas</span>
-          <h2 data-i18n="about.title">Najpierw wyjaśniamy, potem działamy.</h2>
-          <p class="lead" data-i18n="about.p1">PARTNER OFFICE to zespół z Rzeszowa, który pomaga osobom prywatnym i firmom w sprawach pobytowych, księgowych oraz kadrowo-płacowych.</p>
-          <p data-i18n="about.p2">Nie zostawiamy klienta z listą urzędowych pojęć. Tłumaczymy, co jest potrzebne, sprawdzamy dokumenty i pilnujemy kolejnych etapów sprawy. Obsługujemy po polsku, ukraińsku i angielsku.</p>
+          <h2 data-i18n="about.title">Spokojna obsługa formalności, bez zbędnego chaosu.</h2>
+          <p class="lead" data-i18n="about.p1">Jesteśmy biurem w Rzeszowie, które pomaga klientom indywidualnym, cudzoziemcom i przedsiębiorcom w sprawach pobytowych, księgowych oraz kadrowo-płacowych.</p>
+          <p data-i18n="about.p2">Wyjaśniamy, jakie dokumenty są potrzebne, pomagamy je uporządkować i prowadzimy klienta przez kolejne etapy. Komunikujemy się po polsku, ukraińsku i angielsku.</p>
           <div class="simple-list">
-            <span data-i18n="about.li1">Kontakt z osobą prowadzącą sprawę</span>
-            <span data-i18n="about.li2">Konkretna lista dokumentów</span>
+            <span data-i18n="about.li1">Jeden punkt kontaktu</span>
+            <span data-i18n="about.li2">Przejrzyste informacje</span>
             <span data-i18n="about.li3">Wsparcie dla osób prywatnych i firm</span>
           </div>
         </div>
@@ -455,8 +405,8 @@
         </div>
         <div class="contact-box reveal" style="--delay:100ms">
           <span class="eyebrow" data-i18n="contact.eyebrow">Kontakt</span>
-          <h2 data-i18n="contact.title">Porozmawiajmy o Twojej sprawie.</h2>
-          <p data-i18n="contact.desc">Zadzwoń, napisz maila albo odezwij się na Instagramie. Krótko powiesz, czego potrzebujesz, a my wskażemy następny krok.</p>
+          <h2 data-i18n="contact.title">Napisz lub zadzwoń.</h2>
+          <p data-i18n="contact.desc">Skontaktuj się, aby krótko opisać sprawę i ustalić następny krok.</p>
 
           <div class="contact-actions-top">
             <a href="tel:+48690982599" class="btn btn-primary" data-i18n="contact.callBtnTop">Zadzwoń</a>
@@ -494,6 +444,10 @@
                 <div class="contact-actions">
                   <a href="tel:+48690982599" class="btn btn-primary" data-i18n="contact.callBtn">Zadzwoń</a>
                   <a href="mailto:biuro@partneroffice.com.pl" class="btn btn-outline" data-i18n="contact.mailBtn">Napisz e-mail</a>
+                  <a href="https://www.google.com/maps/place/Jana+Matejki+6,+35-064+Rzesz%C3%B3w/@50.0379678,22.0011042,17z/data=!3m1!4b1!4m6!3m5!1s0x473cfb0239084a3b:0xf15cf4672f4c3ec!8m2!3d50.0379678!4d22.0036791!16s%2Fg%2F11q2xvbm86!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="btn btn-outline">
+                    <svg aria-hidden="true"><use href="#i-map-pin"></use></svg>
+                    <span data-i18n="contact.mapBtn">Nawiguj</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -516,68 +470,68 @@
     const T = {
       pl: {
         "nav.services": "Usługi", "nav.about": "O nas", "nav.contact": "Kontakt", "nav.call": "Zadzwoń",
-        "logoFocus.text": "Jesteśmy w Rzeszowie. Pomagamy w sprawach pobytowych, rejestracji działalności, księgowości oraz kadrach i płacach — jasno, konkretnie i po ludzku.", "logoFocus.services": "Usługi", "logoFocus.contact": "Kontakt",
-        "hero.title": "Pobyt, firma i księgowość — w jednym miejscu.",
-        "hero.desc": "Powiedz, czego dotyczy sprawa. Podpowiemy, jakie dokumenty przygotować, uporządkujemy formalności i przeprowadzimy Cię przez kolejne kroki.",
-        "hero.ctaServices": "Zobacz usługi", "hero.ctaContact": "Kontakt", "hero.tag1": "Pobyt w Polsce", "hero.tag2": "Księgowość", "hero.tag3": "Kadry i płace",
-        "hero.card": "Najpierw krótko ustalamy temat, potem przygotowujemy listę dokumentów i plan działania.",
-        "services.eyebrow": "Usługi", "services.title": "W czym pomagamy?", "services.desc": "Najczęściej wybierane usługi zebraliśmy w czterech obszarach, żeby łatwiej znaleźć właściwą sprawę.",
-        "about.eyebrow": "O nas", "about.title": "Najpierw wyjaśniamy, potem działamy.",
-        "about.p1": "PARTNER OFFICE to zespół z Rzeszowa, który pomaga osobom prywatnym i firmom w sprawach pobytowych, księgowych oraz kadrowo-płacowych.",
-        "about.p2": "Nie zostawiamy klienta z listą urzędowych pojęć. Tłumaczymy, co jest potrzebne, sprawdzamy dokumenty i pilnujemy kolejnych etapów sprawy. Obsługujemy po polsku, ukraińsku i angielsku.",
-        "about.li1": "Kontakt z osobą prowadzącą sprawę", "about.li2": "Konkretna lista dokumentów", "about.li3": "Wsparcie dla osób prywatnych i firm",
-        "contact.eyebrow": "Kontakt", "contact.title": "Porozmawiajmy o Twojej sprawie.", "contact.desc": "Zadzwoń, napisz maila albo odezwij się na Instagramie. Krótko powiesz, czego potrzebujesz, a my wskażemy następny krok.",
-        "contact.callBtnTop": "Zadzwoń", "contact.mailBtnTop": "Napisz e-mail", "contact.show": "Pokaż pełne dane kontaktowe", "contact.hide": "Ukryj dane kontaktowe", "contact.addressLabel": "Adres", "contact.phoneLabel": "Telefon", "contact.emailLabel": "E-mail", "contact.regLabel": "Dane", "contact.callBtn": "Zadzwoń", "contact.mailBtn": "Napisz e-mail",
+        "logoFocus.text": "Biuro obsługi formalności pobytowych i firmowych w Rzeszowie. Prosto, czytelnie i z bezpośrednim kontaktem.", "logoFocus.services": "Usługi", "logoFocus.contact": "Kontakt",
+        "hero.title": "Legalizacja pobytu i obsługa firmy w jednym miejscu.",
+        "hero.desc": "PARTNER OFFICE wspiera cudzoziemców, przedsiębiorców i spółki w formalnościach w Polsce: od spraw pobytowych po księgowość, kadry i płace.",
+        "hero.ctaServices": "Zobacz usługi", "hero.ctaContact": "Kontakt", "hero.tag1": "Legalizacja pobytu", "hero.tag2": "Księgowość", "hero.tag3": "Kadry i płace",
+        "hero.card": "Prosty kontakt, jasna lista dokumentów i wsparcie na kolejnych etapach sprawy.",
+        "services.eyebrow": "Usługi", "services.title": "W czym pomagamy?", "services.desc": "Najważniejsze sprawy pobytowe i firmowe zebrane w czterech prostych obszarach.",
+        "about.eyebrow": "O nas", "about.title": "Spokojna obsługa formalności, bez zbędnego chaosu.",
+        "about.p1": "Jesteśmy biurem w Rzeszowie, które pomaga klientom indywidualnym, cudzoziemcom i przedsiębiorcom w sprawach pobytowych, księgowych oraz kadrowo-płacowych.",
+        "about.p2": "Wyjaśniamy, jakie dokumenty są potrzebne, pomagamy je uporządkować i prowadzimy klienta przez kolejne etapy. Komunikujemy się po polsku, ukraińsku i angielsku.",
+        "about.li1": "Jeden punkt kontaktu", "about.li2": "Przejrzyste informacje", "about.li3": "Wsparcie dla osób prywatnych i firm",
+        "contact.eyebrow": "Kontakt", "contact.title": "Napisz lub zadzwoń.", "contact.desc": "Skontaktuj się, aby krótko opisać sprawę i ustalić następny krok.",
+        "contact.callBtnTop": "Zadzwoń", "contact.mailBtnTop": "Napisz e-mail", "contact.show": "Pokaż pełne dane kontaktowe", "contact.hide": "Ukryj dane kontaktowe", "contact.addressLabel": "Adres", "contact.phoneLabel": "Telefon", "contact.emailLabel": "E-mail", "contact.regLabel": "Dane", "contact.callBtn": "Zadzwoń", "contact.mailBtn": "Napisz e-mail", "contact.mapBtn": "Nawiguj",
         "footerSub": "Legalizacja pobytu · Księgowość · Kadry i płace",
         services: [
-          { images: ["assets/Legalizacja.png", "assets/legalizacja.png"], title: "Legalizacja pobytu", list: ["Karty pobytu i przedłużenie pobytu", "Pobyt czasowy, stały i rezydent UE", "Obywatelstwo oraz akty stanu cywilnego"] },
-          { images: ["assets/Zakladanie.png", "assets/Zakładanie.png", "assets/zakladanie.png"], title: "Zakładanie działalności", list: ["JDG — rejestracja i podstawowe zgłoszenia", "Spółka z o.o. — organizacja dokumentów", "Pomoc w pierwszych formalnościach firmowych"] },
-          { images: ["assets/Ksiegowosc.png", "assets/ksiegowosc.png"], title: "Księgowość", list: ["Księgowość JDG i spółek", "Deklaracje, rozliczenia i terminy", "Stały kontakt w sprawach bieżących"] },
-          { images: ["assets/Kadry.png", "assets/kadry.png"], title: "Kadry i płace", list: ["Umowy i dokumentacja pracownicza", "Naliczanie wynagrodzeń", "ZUS i podstawowe sprawy kadrowe"] }
+          { icon: "i-file", title: "Legalizacja pobytu", list: ["Sprawy pobytowe i administracyjne", "Karty pobytu i rezydent UE", "Obywatelstwo oraz akty stanu cywilnego"] },
+          { icon: "i-building", title: "Zakładanie działalności", list: ["Jednoosobowa działalność gospodarcza", "Spółka z o.o.", "Podstawowe formalności rejestracyjne"] },
+          { icon: "i-calc", title: "Księgowość", list: ["Obsługa JDG i spółek", "Deklaracje i rozliczenia", "Bieżąca komunikacja z klientem"] },
+          { icon: "i-users", title: "Kadry i płace", list: ["Umowy i dokumenty pracownicze", "Naliczanie wynagrodzeń", "Obsługa ZUS"] }
         ]
       },
       uk: {
         "nav.services": "Послуги", "nav.about": "Про нас", "nav.contact": "Контакти", "nav.call": "Зателефонувати",
-        "logoFocus.text": "Ми працюємо в Жешуві. Допомагаємо з легалізацією перебування, реєстрацією бізнесу, бухгалтерією, кадрами та зарплатою — зрозуміло і по кроках.", "logoFocus.services": "Послуги", "logoFocus.contact": "Контакт",
-        "hero.title": "Перебування, бізнес і бухгалтерія — в одному місці.",
-        "hero.desc": "Розкажіть, яка у вас справа. Ми підкажемо, які документи підготувати, впорядкуємо формальності та проведемо вас через наступні кроки.",
-        "hero.ctaServices": "Переглянути послуги", "hero.ctaContact": "Контакт", "hero.tag1": "Побит у Польщі", "hero.tag2": "Бухгалтерія", "hero.tag3": "Кадри та зарплата",
-        "hero.card": "Спочатку коротко уточнюємо справу, потім готуємо список документів і план дій.",
-        "services.eyebrow": "Послуги", "services.title": "З чим допомагаємо?", "services.desc": "Найчастіші послуги зібрані у чотири напрями, щоб легше знайти потрібну справу.",
-        "about.eyebrow": "Про нас", "about.title": "Спочатку пояснюємо, потім діємо.",
-        "about.p1": "PARTNER OFFICE — це команда з Жешува, яка допомагає приватним особам і компаніям у питаннях перебування, бухгалтерії, кадрів і зарплати.",
-        "about.p2": "Ми не залишаємо клієнта наодинці зі складними офіційними термінами. Пояснюємо, що потрібно, перевіряємо документи і супроводжуємо наступні етапи справи. Спілкуємося польською, українською та англійською.",
-        "about.li1": "Контакт з людиною, яка веде справу", "about.li2": "Конкретний список документів", "about.li3": "Підтримка приватних осіб і компаній",
-        "contact.eyebrow": "Контакти", "contact.title": "Поговорімо про вашу справу.", "contact.desc": "Зателефонуйте, напишіть e-mail або зверніться в Instagram. Коротко опишете, що потрібно, а ми підкажемо наступний крок.",
-        "contact.callBtnTop": "Зателефонувати", "contact.mailBtnTop": "Написати e-mail", "contact.show": "Показати повні контактні дані", "contact.hide": "Сховати контактні дані", "contact.addressLabel": "Адреса", "contact.phoneLabel": "Телефон", "contact.emailLabel": "E-mail", "contact.regLabel": "Дані", "contact.callBtn": "Зателефонувати", "contact.mailBtn": "Написати e-mail",
+        "logoFocus.text": "Бюро підтримки у питаннях перебування та бізнесу в Жешуві. Просто, зрозуміло і з прямим контактом.", "logoFocus.services": "Послуги", "logoFocus.contact": "Контакт",
+        "hero.title": "Легалізація перебування та обслуговування бізнесу в одному місці.",
+        "hero.desc": "PARTNER OFFICE підтримує іноземців, підприємців і компанії у формальностях у Польщі: від питань перебування до бухгалтерії, кадрів і зарплати.",
+        "hero.ctaServices": "Переглянути послуги", "hero.ctaContact": "Контакт", "hero.tag1": "Легалізація перебування", "hero.tag2": "Бухгалтерія", "hero.tag3": "Кадри та зарплата",
+        "hero.card": "Простий контакт, зрозумілий список документів і підтримка на наступних етапах справи.",
+        "services.eyebrow": "Послуги", "services.title": "З чим допомагаємо?", "services.desc": "Основні питання перебування та бізнесу зібрані у чотири прості напрями.",
+        "about.eyebrow": "Про нас", "about.title": "Спокійне ведення формальностей без зайвого хаосу.",
+        "about.p1": "Ми — бюро у Жешуві, яке допомагає приватним клієнтам, іноземцям і підприємцям у питаннях перебування, бухгалтерії, кадрів і зарплати.",
+        "about.p2": "Пояснюємо, які документи потрібні, допомагаємо їх упорядкувати і проводимо клієнта через наступні етапи. Спілкуємося польською, українською та англійською.",
+        "about.li1": "Один контактний пункт", "about.li2": "Зрозуміла інформація", "about.li3": "Підтримка приватних осіб і компаній",
+        "contact.eyebrow": "Контакти", "contact.title": "Напишіть або зателефонуйте.", "contact.desc": "Зв'яжіться з нами, щоб коротко описати справу і визначити наступний крок.",
+        "contact.callBtnTop": "Зателефонувати", "contact.mailBtnTop": "Написати e-mail", "contact.show": "Показати повні контактні дані", "contact.hide": "Сховати контактні дані", "contact.addressLabel": "Адреса", "contact.phoneLabel": "Телефон", "contact.emailLabel": "E-mail", "contact.regLabel": "Дані", "contact.callBtn": "Зателефонувати", "contact.mailBtn": "Написати e-mail", "contact.mapBtn": "Навігація",
         "footerSub": "Легалізація перебування · Бухгалтерія · Кадри та зарплата",
         services: [
-          { images: ["assets/Legalizacja.png", "assets/legalizacja.png"], title: "Легалізація перебування", list: ["Карти побиту та продовження перебування", "Тимчасове, постійне перебування і резидент ЄС", "Громадянство та акти цивільного стану"] },
-          { images: ["assets/Zakladanie.png", "assets/Zakładanie.png", "assets/zakladanie.png"], title: "Реєстрація бізнесу", list: ["JDG — реєстрація і базові заяви", "Sp. z o.o. — підготовка документів", "Допомога з першими бізнес-формальностями"] },
-          { images: ["assets/Ksiegowosc.png", "assets/ksiegowosc.png"], title: "Бухгалтерія", list: ["Бухгалтерія для JDG і компаній", "Декларації, розрахунки і терміни", "Поточний контакт у робочих питаннях"] },
-          { images: ["assets/Kadry.png", "assets/kadry.png"], title: "Кадри та зарплата", list: ["Договори і кадрова документація", "Розрахунок зарплати", "ZUS і базові кадрові справи"] }
+          { icon: "i-file", title: "Легалізація перебування", list: ["Питання перебування та адміністративні справи", "Карти побиту і резидент ЄС", "Громадянство та акти цивільного стану"] },
+          { icon: "i-building", title: "Реєстрація бізнесу", list: ["JDG — одноосібна діяльність", "Sp. z o.o.", "Основні реєстраційні формальності"] },
+          { icon: "i-calc", title: "Бухгалтерія", list: ["Обслуговування JDG і компаній", "Декларації та розрахунки", "Поточна комунікація з клієнтом"] },
+          { icon: "i-users", title: "Кадри та зарплата", list: ["Договори та кадрові документи", "Розрахунок зарплати", "Обслуговування ZUS"] }
         ]
       },
       en: {
         "nav.services": "Services", "nav.about": "About", "nav.contact": "Contact", "nav.call": "Call",
-        "logoFocus.text": "Based in Rzeszów, we help with residence matters, business registration, accounting, HR and payroll — clearly and step by step.", "logoFocus.services": "Services", "logoFocus.contact": "Contact",
-        "hero.title": "Residence, business and accounting — in one place.",
-        "hero.desc": "Tell us what you need. We will explain which documents to prepare, organise the formalities and guide you through the next steps.",
-        "hero.ctaServices": "View services", "hero.ctaContact": "Contact", "hero.tag1": "Residence", "hero.tag2": "Accounting", "hero.tag3": "HR & Payroll",
-        "hero.card": "First we clarify the case, then we prepare a document list and a practical plan of action.",
-        "services.eyebrow": "Services", "services.title": "How can we help?", "services.desc": "The most common services are grouped into four areas, so you can quickly find the right support.",
-        "about.eyebrow": "About", "about.title": "First we explain, then we act.",
-        "about.p1": "PARTNER OFFICE is a Rzeszów-based team supporting individuals and companies with residence matters, accounting, HR and payroll.",
-        "about.p2": "We do not leave clients alone with official wording and unclear requirements. We explain what is needed, check the documents and keep an eye on the next stages of the case. We speak Polish, Ukrainian and English.",
-        "about.li1": "Contact with the person handling your case", "about.li2": "A clear list of documents", "about.li3": "Support for individuals and companies",
-        "contact.eyebrow": "Contact", "contact.title": "Let’s talk about your case.", "contact.desc": "Call, send an e-mail or message us on Instagram. Briefly tell us what you need, and we will suggest the next step.",
-        "contact.callBtnTop": "Call", "contact.mailBtnTop": "Send e-mail", "contact.show": "Show full contact details", "contact.hide": "Hide contact details", "contact.addressLabel": "Address", "contact.phoneLabel": "Phone", "contact.emailLabel": "E-mail", "contact.regLabel": "Details", "contact.callBtn": "Call", "contact.mailBtn": "Send e-mail",
+        "logoFocus.text": "Office supporting residence and business formalities in Rzeszów. Simple, clear and with direct contact.", "logoFocus.services": "Services", "logoFocus.contact": "Contact",
+        "hero.title": "Residence formalities and business support in one place.",
+        "hero.desc": "PARTNER OFFICE supports foreigners, entrepreneurs and companies with formalities in Poland: from residence matters to accounting, HR and payroll.",
+        "hero.ctaServices": "View services", "hero.ctaContact": "Contact", "hero.tag1": "Residence formalities", "hero.tag2": "Accounting", "hero.tag3": "HR & Payroll",
+        "hero.card": "Simple contact, a clear document list and support through the next stages of the case.",
+        "services.eyebrow": "Services", "services.title": "How can we help?", "services.desc": "Key residence and business matters organised into four simple areas.",
+        "about.eyebrow": "About", "about.title": "Calm handling of formalities, without unnecessary chaos.",
+        "about.p1": "We are an office in Rzeszów supporting individual clients, foreigners and entrepreneurs with residence matters, accounting, HR and payroll.",
+        "about.p2": "We explain what documents are needed, help organise them and guide the client through the next steps. We communicate in Polish, Ukrainian and English.",
+        "about.li1": "One point of contact", "about.li2": "Clear information", "about.li3": "Support for individuals and companies",
+        "contact.eyebrow": "Contact", "contact.title": "Write or call.", "contact.desc": "Contact us to briefly describe your case and agree on the next step.",
+        "contact.callBtnTop": "Call", "contact.mailBtnTop": "Send e-mail", "contact.show": "Show full contact details", "contact.hide": "Hide contact details", "contact.addressLabel": "Address", "contact.phoneLabel": "Phone", "contact.emailLabel": "E-mail", "contact.regLabel": "Details", "contact.callBtn": "Call", "contact.mailBtn": "Send e-mail", "contact.mapBtn": "Navigate",
         "footerSub": "Residence formalities · Accounting · HR & Payroll",
         services: [
-          { images: ["assets/Legalizacja.png", "assets/legalizacja.png"], title: "Residence formalities", list: ["Residence cards and stay extensions", "Temporary, permanent and EU resident status", "Citizenship and civil status documents"] },
-          { images: ["assets/Zakladanie.png", "assets/Zakładanie.png", "assets/zakladanie.png"], title: "Business registration", list: ["JDG registration and basic filings", "Sp. z o.o. document organisation", "Support with first business formalities"] },
-          { images: ["assets/Ksiegowosc.png", "assets/ksiegowosc.png"], title: "Accounting", list: ["Accounting for JDG and companies", "Declarations, filings and deadlines", "Ongoing contact on daily matters"] },
-          { images: ["assets/Kadry.png", "assets/kadry.png"], title: "HR & Payroll", list: ["Contracts and employee documentation", "Payroll calculation", "ZUS and basic HR matters"] }
+          { icon: "i-file", title: "Residence formalities", list: ["Residence and administrative matters", "Residence permits and EU resident status", "Citizenship and civil status documents"] },
+          { icon: "i-building", title: "Business registration", list: ["Sole trader / JDG", "Limited liability company / Sp. z o.o.", "Basic registration formalities"] },
+          { icon: "i-calc", title: "Accounting", list: ["Support for JDG and companies", "Declarations and filings", "Ongoing client communication"] },
+          { icon: "i-users", title: "HR & Payroll", list: ["Contracts and employee documents", "Payroll calculation", "ZUS administration"] }
         ]
       }
     };
@@ -601,35 +555,11 @@
       }
     }
 
-    function escAttr(value) {
-      return String(value).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
-    }
-
-    function serviceImage(s) {
-      const candidates = Array.isArray(s.images) ? s.images : [s.image];
-      const src = candidates[0] || "";
-      const fallbacks = candidates.slice(1).join("|");
-      const fallbackAttr = fallbacks ? ` data-fallbacks="${escAttr(fallbacks)}"` : "";
-      return `<img src="${escAttr(src)}"${fallbackAttr} alt="" aria-hidden="true" loading="lazy" decoding="async" onerror="handleImageFallback(this)">`;
-    }
-
-    function handleImageFallback(img) {
-      const fallbacks = (img.dataset.fallbacks || "").split("|").filter(Boolean);
-      if (fallbacks.length) {
-        img.src = fallbacks.shift();
-        img.dataset.fallbacks = fallbacks.join("|");
-        return;
-      }
-      const box = img.closest(".service-visual");
-      if (box) box.classList.add("image-missing");
-      img.style.display = "none";
-    }
-
     function renderServices() {
       const grid = document.getElementById("servicesGrid");
       grid.innerHTML = T[lang].services.map((s, i) => `
         <article class="service-card reveal" style="--delay:${i * 70}ms">
-          <div class="service-visual">${serviceImage(s)}</div>
+          <div class="service-icon">${icon(s.icon)}</div>
           <h3>${s.title}</h3>
           <ul>${s.list.map(item => `<li>${item}</li>`).join("")}</ul>
         </article>
